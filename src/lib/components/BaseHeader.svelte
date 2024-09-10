@@ -12,13 +12,7 @@
 
   <!-- 右上（ナビゲーション）-->
   <div class="flex flex-col items-end">
-    <ul class="text-lg font-bold flex">
-      <li class="ml-4"><a href="/about">ABOUT</a></li>
-      <li class="ml-4"><a href="/work">WORK</a></li>
-      <li class="ml-4"><a href="/blog">BLOG</a></li>
-    </ul>
-
-    <!-- 右下（MY TECHBLOG）-->
+    <!-- 右側（MY TECHBLOG）-->
     <div class="outline-text pt-10">
       <span class="text-6xl font-bold opacity-30">MY TECHBLOG</span>
     </div>

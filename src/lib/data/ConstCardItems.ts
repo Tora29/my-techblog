@@ -1,4 +1,4 @@
-export const constCards = [
+export const constCardItems = [
 	{
 		link: '/about',
 		imgSrc: 'myImage.jpg',

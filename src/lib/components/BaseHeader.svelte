@@ -1,32 +1,34 @@
 <script lang="ts">
+	// コンポーネントの変数
+	export let navbar: string = 'navbar';
+	export let color: string = 'bg-primary';
 
+  // CommonStyle
+	const commonStyle: string = 'join-item w-40';
+
+	// CommonJoin に値を格納する
+	export let joinItems = [
+		{ class: commonStyle, text: 'ABOUT ME', link: '/about' },
+		{ class: commonStyle, text: 'SERVICE', link: '/service' },
+		{ class: commonStyle, text: 'BLOG', link: '/blog' },
+		{ class: commonStyle, text: 'CONTACT', link: '/contact' }
+	];
+
+	// コンポーネントのインポート
+	import CommonJoin from './CommonJoin.svelte';
+	import CommonButton from './CommonButton.svelte';
 </script>
 
-<!-- ヘッダー全体 -->
-<div class="navbar bg-base-300 fixed h-40 w-full px-6 flex justify-between items-start">
-  
-  <!-- 左上（HOME） -->
-  <div class="text-3xl font-bold">
-    <a href="/">HOME</a>
-  </div>
-
-  <!-- 右上（ナビゲーション）-->
-  <div class="flex flex-col items-end">
-    <!-- 右側（MY TECHBLOG）-->
-    <div class="outline-text pt-10">
-      <span class="text-6xl font-bold opacity-30">MY TECHBLOG</span>
-    </div>
-  </div>
+<!-- Header -->
+<div class={`${navbar} ${color} relative flex items-center h-40`}>
+	<!-- トップ -->
+<div class="absolute top-0 left-0 m-4 md:m-6">
+    <CommonButton text="Tora29" {commonStyle} />
+</div>
+	<div class="flex-1 flex justify-center">
+		<CommonJoin {joinItems} />
+	</div>
 </div>
 
 <style>
-  /* ヘッダーの縁取り */
-  .navbar {
-    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 40% 100%, 36.5% 70%, 18.5% 70%, 15% 100%, 0% 100%);
-  }
-
-  .outline-text {
-    color: transparent;
-    -webkit-text-stroke: 1px white;
-  }
 </style>

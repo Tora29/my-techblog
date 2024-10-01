@@ -19,8 +19,16 @@ jobs:
         with:
           node-version: '18' # 使用するNode.jsのバージョンを指定
 
+      - name: Cache node modules
+        uses: actions/cache@v3
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
       - name: Install dependencies
         run: npm install
 
-      - name: Run vitest
-        run: npm test:vitest
+      - name: Run tests
+        run: npm run test -- --reporter=dot

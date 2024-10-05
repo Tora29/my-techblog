@@ -24,8 +24,8 @@
 	}
 
 	// Svelte MDI
-	import WeatherSunnyIcon from '../../icons/WeatherSunnyIcon.svelte';
-	import WeatherNightIcon from '../../icons/WeatherNightIcon.svelte';
+	import WeatherSunnyIcon from '../icons/WeatherSunnyIcon.svelte';
+	import WeatherNightIcon from '../icons/WeatherNightIcon.svelte';
 </script>
 
 <label class={labelClass}>

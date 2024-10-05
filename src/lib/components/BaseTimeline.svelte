@@ -3,7 +3,7 @@
 	import { constTimelineItems } from '$lib/data/ConstTimelineItems';
 
 	// Svelte MDI
-	import CheckCircleIcon from '../../icons/CheckCircleIcon.svelte';
+	import CheckCircleIcon from '../icons/CheckCircleIcon.svelte';
 </script>
 
 <ul class="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical">

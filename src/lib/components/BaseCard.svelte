@@ -1,8 +1,6 @@
 <script lang="ts">
 	// コンポーネントの変数
 	export let link: string = '/';
-	export let classType: string = 'card';
-	export let cardType: string = 'card-side';
 	export let color: string = 'bg-primary';
 	export let height: string = 'h-40';
 	export let width: string = 'w-100';
@@ -14,7 +12,7 @@
 	export let cardText: string = 'card-text';
 </script>
 
-<a href={link} class="{classType} {cardType} {color} {height} {width}">
+<a href={link} class={`card card-side ${color} ${height} ${width}`}>
 	<figure>
 		<img src={imgSrc} alt={imgAlt} class="{imgHeight} {imgWidth}" />
 	</figure>

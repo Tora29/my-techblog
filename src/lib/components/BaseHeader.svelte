@@ -1,6 +1,5 @@
 <script lang="ts">
 	// コンポーネントの変数
-	export let navbar: string = 'navbar';
 	export let color: string = 'bg-primary';
 
 	// CommonStyle
@@ -20,10 +19,10 @@
 </script>
 
 <!-- Header -->
-<div class={`${navbar} ${color} relative flex items-center h-40`}>
+<div class={`navbar ${color} relative flex items-center h-40`}>
 	<!-- トップ -->
 	<div class="absolute top-0 left-0 m-4 md:m-6">
-		<CommonButton text="Tora29" {commonStyle} />
+		<CommonButton text="Tora29" />
 	</div>
 	<div class="flex-1 flex justify-center">
 		<CommonJoin {joinItems} />

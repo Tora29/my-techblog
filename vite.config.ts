@@ -8,5 +8,8 @@ export default defineConfig({
 		globals: true,
 		environment: 'jsdom',
 		include: ['src/**/*.vitest.ts']
+	},
+	optimizeDeps: {
+		exclude: ['dompurify']
 	}
 });

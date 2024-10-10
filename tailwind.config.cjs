@@ -1,4 +1,8 @@
 /** @type {import('tailwindcss').Config} */
+
+// Daisy UI のインポート
+import daisyui from 'daisyui'
+
 module.exports = {
 	content: ['./src/**/*.{html,js,svelte,ts}'],
 	daisyui: {
@@ -31,5 +35,5 @@ module.exports = {
 			}
 		}
 	},
-	plugins: [require('daisyui')]
+	plugins: [daisyui]
 };

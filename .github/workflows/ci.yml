@@ -65,7 +65,7 @@ jobs:
       - name: Extract test coverage percentage
         id: coverage 
         run: |
-          coverage=$(jq '.total.lines.pct' < coverage/coverage-summary.json)
+          coverage=$(jq '.total.lines.pct' < coverage/coverage-final.json)
           echo "coverage=${coverage}" >> $GITHUB_OUTPUT
 
       # カバレッジ結果をSlackに通知

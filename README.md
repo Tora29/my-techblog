@@ -1,38 +1,53 @@
-# create-svelte
+# ポートフォリオ兼テックブログ
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/main/packages/create-svelte).
+このリポジトリは、ポートフォリオ兼テックブログのソースコードです。
 
-## Creating a project
+## 目次
 
-If you're seeing this, you've probably already done this step. Congrats!
+- [プロジェクトの概要]
+- [開発環境のセットアップからPR作成まで]
+  - [テストの実行]
+- [ブランチ命名規則]
+- [コミットメッセージ]
+---
 
+## プロジェクトの概要
+
+このプロジェクトは、Svelte Kit を使用して構築したポートフォリオ兼テックブログです。<br>
+個人のポートフォリオや技術的な情報発信を目的としています。
+
+## 開発環境のセットアップからPR作成まで
 ```bash
-# create a new project in the current directory
-npm create svelte@latest
-
-# create a new project in my-app
-npm create svelte@latest my-app
+1．開発リポジトリを、自分のアカウントへFork
+2．master ブランチから、作業ブランチを切る
+3．ローカルで開発、コミットしてFork したブランチへPush
+4．プルリクエストを作成する
 ```
 
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
+## テストの実行
 ```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
+npm run test（テストを実行）
+npm run test-c（カバレッジを表示しながらテストを実行）
 ```
 
-## Building
-
-To create a production version of your app:
-
+## ブランチ命名規則
 ```bash
-npm run build
+feature：新しい機能の追加や既存機能の拡張
+bugfix：バグの修正
+hotfix：緊急の修正が必要な場合
+refactor：機能の変更がないコードのリファクタリング
+test：テストコードの追加や修正
+docs：ドキュメントの追加や更新
+chore：ビルドプロセスや補助ツール、ライブラリの更新など
 ```
 
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+## コミットメッセージ
+```bash
+feat：新機能の追加
+fix：バグの修正
+docs：ドキュメントの追加や更新
+style：フォーマット修正等のコードの意味に影響しない変更
+refactor：機能の変更がないコードのリファクタリング
+test：テストコードの追加や修正
+chore：ビルドプロセスや補助ツールの変更、ライブラリの更新
+```

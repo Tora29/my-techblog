@@ -1,10 +1,11 @@
 import { render } from '@testing-library/svelte';
+import { expect, test } from 'vitest';
 import '@testing-library/jest-dom';
 import BaseCard from '$lib/components/BaseCard.svelte';
 
 describe('Card Component', () => {
-	it('renders with default props', () => {
-		const { getByRole, getByText } = render(BaseCard);
+	test('カードをデフォルトプロパティでレンダリング', () => {
+		const { getByRole, getByText, container } = render(BaseCard);
 
 		// リンクのデフォルト値を確認
 		const link = getByRole('link');
@@ -13,9 +14,12 @@ describe('Card Component', () => {
 		// デフォルトのタイトルとテキストを確認
 		expect(getByText('card-title')).toBeInTheDocument();
 		expect(getByText('card-text')).toBeInTheDocument();
+
+		// スナップショットを取得
+		expect(container).toMatchSnapshot();
 	});
 
-	it('renders with custom props', () => {
+	test('カードをカスタムプロパティでレンダリング', () => {
 		const props = {
 			link: '/test-link',
 			color: 'bg-secondary',
@@ -29,7 +33,7 @@ describe('Card Component', () => {
 			cardText: 'Test text content.'
 		};
 
-		const { getByRole, getByAltText, getByText } = render(BaseCard, { props });
+		const { getByRole, getByAltText, getByText, container } = render(BaseCard, { props });
 
 		// カスタムリンクを確認
 		const link = getByRole('link');
@@ -44,18 +48,24 @@ describe('Card Component', () => {
 		// カスタムタイトルとテキストを確認
 		expect(getByText(props.cardTitle)).toBeInTheDocument();
 		expect(getByText(props.cardText)).toBeInTheDocument();
+
+		// スナップショットを取得
+		expect(container).toMatchSnapshot();
 	});
 
-	it('renders without image when imgSrc is empty', () => {
+	test('imgSrcが空の場合、画像がレンダリングされない', () => {
 		const props = {
 			imgSrc: '',
 			imgAlt: ''
 		};
 
-		const { queryByRole } = render(BaseCard, { props });
+		const { queryByRole, container } = render(BaseCard, { props });
 
 		// 画像がレンダリングされていないことを確認
 		const img = queryByRole('img');
 		expect(img).not.toBeInTheDocument();
+
+		// スナップショットを取得
+		expect(container).toMatchSnapshot();
 	});
 });

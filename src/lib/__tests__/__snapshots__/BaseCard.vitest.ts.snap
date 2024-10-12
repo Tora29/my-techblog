@@ -1,0 +1,92 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Card Component > imgSrcが空の場合、画像がレンダリングされない 1`] = `
+<div>
+  <a
+    class="card card-side bg-primary h-40 w-100"
+    href="/"
+  >
+    <figure>
+      <img
+        alt=""
+        class="h-40 w-72"
+      />
+    </figure>
+     
+    <div
+      class="card-body"
+    >
+      <h2
+        class="card-title"
+      >
+        card-title
+      </h2>
+       
+      <p>
+        card-text
+      </p>
+    </div>
+  </a>
+</div>
+`;
+
+exports[`Card Component > カードをカスタムプロパティでレンダリング 1`] = `
+<div>
+  <a
+    class="card card-side bg-secondary h-50 w-200"
+    href="/test-link"
+  >
+    <figure>
+      <img
+        alt="Test Image"
+        class="h-50 w-150"
+        src="https://test.com/image.jpg"
+      />
+    </figure>
+     
+    <div
+      class="card-body"
+    >
+      <h2
+        class="card-title"
+      >
+        Test Title
+      </h2>
+       
+      <p>
+        Test text content.
+      </p>
+    </div>
+  </a>
+</div>
+`;
+
+exports[`Card Component > カードをデフォルトプロパティでレンダリング 1`] = `
+<div>
+  <a
+    class="card card-side bg-primary h-40 w-100"
+    href="/"
+  >
+    <figure>
+      <img
+        alt=""
+        class="h-40 w-72"
+      />
+    </figure>
+     
+    <div
+      class="card-body"
+    >
+      <h2
+        class="card-title"
+      >
+        card-title
+      </h2>
+       
+      <p>
+        card-text
+      </p>
+    </div>
+  </a>
+</div>
+`;

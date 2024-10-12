@@ -54,13 +54,12 @@ jobs:
         uses: rtCamp/action-slack-notify@v2.2.0
         env:
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_URL }}
+          SLACK_MESSAGE: |
+            ✅ テストが成功しました。
+            カバレッジ: ${{ steps.coverage.outputs.coverage }}%
           SLACK_USERNAME: 'Vitest Bot'
           SLACK_ICON_EMOJI: ':rocket'
           SLACK_COLOR: 'good'
-        with:
-          message: |
-            ✅ テストが成功しました。
-            カバレッジ: ${{ steps.coverage.outputs.coverage }}%
 
       # テスト失敗時のSlack 通知
       - name: Notify Slack on failure

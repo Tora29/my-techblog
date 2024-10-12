@@ -1,5 +1,5 @@
 <script lang="ts">
-	import BaseCard from '$lib/components/BaseCard.svelte';
+	import BaseCard from '$lib/components/CommonCard.svelte';
 	import { constCardItems } from '$lib/data/ConstCardItems';
 
 	export let cardItems = constCardItems;

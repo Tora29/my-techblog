@@ -1,7 +1,7 @@
 import { render } from '@testing-library/svelte';
 import { expect, test } from 'vitest';
 import '@testing-library/jest-dom';
-import BaseCard from '$lib/components/BaseCard.svelte';
+import BaseCard from '$lib/components/CommonCard.svelte';
 
 describe('Card Component', () => {
 	test('カードをデフォルトプロパティでレンダリング', () => {

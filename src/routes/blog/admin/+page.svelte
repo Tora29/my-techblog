@@ -1,5 +1,5 @@
 <script lang="ts">
-	import BaseTextInput from '$lib/components/BaseTextInput.svelte';
+	import BaseTextInput from '$lib/components/CommonTextInput.svelte';
 	import BaseMarkdownEditor from '$lib/components/BaseMarkdownEditor.svelte';
 	import CommonButton from '$lib/components/CommonButton.svelte';
 </script>

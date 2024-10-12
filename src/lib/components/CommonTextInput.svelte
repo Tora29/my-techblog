@@ -6,4 +6,4 @@
 	export let size: string = 'input-md';
 </script>
 
-<input type="input" {placeholder} class="input {style} {color} {size}" />
+<input type="text" {placeholder} class="input {style} {color} {size}" />

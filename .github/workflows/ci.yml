@@ -40,17 +40,29 @@ jobs:
           name: coverage-report
           path: coverage/
 
-      # テスト結果をSlackに通知
+      # カバレッジ結果を抽出
+      - name: Extract test coverage percentage
+        if: ${{ success() }}
+        id: coverage
+        run: |
+          coverage=$(jq '.total.lines.pct' coverage/coverage-summary.json)
+          echo "coverage=${coverage}" >> $GITHUB_OUTPUT
+
+      # テスト成功時のSlack 通知
       - name: Notify Slack on success
         if: ${{ success() }}
         uses: rtCamp/action-slack-notify@v2.2.0
         env:
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_URL }}
-          SLACK_MESSAGE: '✅ テストが成功しました。'
-          SLACK_COLOR: 'good'
           SLACK_USERNAME: 'Vitest Bot'
           SLACK_ICON_EMOJI: ':rocket'
+          SLACK_COLOR: 'good'
+        with:
+          message: |
+            ✅ テストが成功しました。
+            カバレッジ: ${{ steps.coverage.outputs.coverage }}%
 
+      # テスト失敗時のSlack 通知
       - name: Notify Slack on failure
         if: ${{ failure() }}
         uses: rtCamp/action-slack-notify@v2.2.0
@@ -60,21 +72,3 @@ jobs:
           SLACK_COLOR: 'danger'
           SLACK_USERNAME: 'Vitest Bot'
           SLACK_ICON_EMOJI: ':rocket'
-
-      # カバレッジ結果のパーセントを抽出
-      - name: Extract test coverage percentage
-        id: coverage 
-        run: |
-          coverage=$(jq '.total.lines.pct' < coverage/coverage-final.json)
-          echo "coverage=${coverage}" >> $GITHUB_OUTPUT
-
-      # カバレッジ結果をSlackに通知
-      - name: Notify Slack with test coverage
-        uses: rtCamp/action-slack-notify@v2.2.0
-        env:
-          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_URL }}
-          SLACK_USERNAME: 'Vitest Bot'
-          SLACK_ICON_EMOJI: ':rocket'
-        with:
-          message: 'Test Coverage: ${{ steps.coverage.outputs.coverage }}%'
-          color: 'good'

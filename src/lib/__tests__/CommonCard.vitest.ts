@@ -1,11 +1,11 @@
 import { render } from '@testing-library/svelte';
 import { expect, test } from 'vitest';
 import '@testing-library/jest-dom';
-import BaseCard from '$lib/components/CommonCard.svelte';
+import CommonCard from '$lib/components/CommonCard.svelte';
 
 describe('Card Component', () => {
 	test('カードをデフォルトプロパティでレンダリング', () => {
-		const { getByRole, getByText, container } = render(BaseCard);
+		const { getByRole, getByText, container } = render(CommonCard);
 
 		// リンクのデフォルト値を確認
 		const link = getByRole('link');
@@ -33,7 +33,7 @@ describe('Card Component', () => {
 			cardText: 'Test text content.'
 		};
 
-		const { getByRole, getByAltText, getByText, container } = render(BaseCard, { props });
+		const { getByRole, getByAltText, getByText, container } = render(CommonCard, { props });
 
 		// カスタムリンクを確認
 		const link = getByRole('link');
@@ -59,7 +59,7 @@ describe('Card Component', () => {
 			imgAlt: ''
 		};
 
-		const { queryByRole, container } = render(BaseCard, { props });
+		const { queryByRole, container } = render(CommonCard, { props });
 
 		// 画像がレンダリングされていないことを確認
 		const img = queryByRole('img');

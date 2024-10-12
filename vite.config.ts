@@ -7,7 +7,7 @@ export default defineConfig({
 	test: {
 		globals: true,
 		environment: 'jsdom',
-		include: ['src/**/*.vitest.ts']
+		include: ['src/**/*.test.ts'],
 	},
 	optimizeDeps: {
 		exclude: ['dompurify']

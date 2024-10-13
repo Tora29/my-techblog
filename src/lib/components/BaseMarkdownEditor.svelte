@@ -1,30 +1,21 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
+	import xss from 'xss';
 	import { marked } from 'marked';
 
 	let markdown: string = '';
 	let htmlContent: string = '';
-	let DOMPurify: typeof import('dompurify') | null = null;
-
-	// クライアントサイドでDOMPurify をインポート
-	onMount(async () => {
-		const module = await import('dompurify');
-		DOMPurify = module.default;
-	});
 
 	// markdown が変更されるたびにHTML に変換しサニタイズ
-	$: if (DOMPurify) {
-		(async () => {
-			const parsedMarkdown = await marked.parse(markdown);
-			htmlContent = DOMPurify.sanitize(parsedMarkdown);
-		})();
+	$: {
+		const parsedMarkdown = marked.parse(markdown);
+		htmlContent = xss(parsedMarkdown as string); 
 	}
 </script>
 
 <!-- レイアウトコンテナ -->
 <div class="grid grid-cols-2 gap-4 p-4 min-h-[70vh] max-h-[100vh]">
 	<!-- Markdown を入力するためのテキストエリア -->
-	<div class="flex flex-col ">
+	<div class="flex flex-col">
 		<textarea
 			bind:value={markdown}
 			placeholder="Enter markdown here"

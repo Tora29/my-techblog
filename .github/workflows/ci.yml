@@ -12,15 +12,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      - name: リポジトリのチェックアウト
         uses: actions/checkout@v3
 
-      - name: Setup Node.js
+      - name: Node.js のセットアップ
         uses: actions/setup-node@v3
         with:
-          node-version: '18'
+          node-version: '20'
 
-      - name: Cache node modules
+      - name: Node.jsモジュール のキャッシュ
         uses: actions/cache@v3
         with:
           path: ~/.npm
@@ -28,20 +28,20 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-node-
 
-      - name: Install dependencies
+      - name: 依存関係のインストール
         run: npm install
 
-      - name: Run tests and generate coverage
+      - name: テスト実行後カバレッジを生成
         run: npm run test -- --coverage
 
-      - name: Upload coverage report
-        uses: actions/upload-artifact@v3
+      - name: カバレッジレポートのアップロード
+        uses: actions/upload-artifact@v4
         with:
           name: coverage-report
           path: coverage/
 
       # カバレッジ結果を抽出
-      - name: Extract test coverage percentage
+      - name: カバレッジパーセントの抽出
         if: ${{ success() }}
         id: coverage
         run: |
@@ -49,7 +49,7 @@ jobs:
           echo "coverage=${coverage}" >> $GITHUB_OUTPUT
 
       # テスト成功時のSlack 通知
-      - name: Notify Slack on success
+      - name: テスト成功時のSlack 通知
         if: ${{ success() }}
         uses: rtCamp/action-slack-notify@v2.2.0
         env:
@@ -62,7 +62,7 @@ jobs:
           SLACK_COLOR: 'good'
 
       # テスト失敗時のSlack 通知
-      - name: Notify Slack on failure
+      - name: テスト失敗時のSlack 通知
         if: ${{ failure() }}
         uses: rtCamp/action-slack-notify@v2.2.0
         env:

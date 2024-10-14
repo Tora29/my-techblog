@@ -3,9 +3,9 @@
 exports[`TextInput Component > インプットエリアをカスタムプロパティでレンダリング 1`] = `
 <div>
   <input
-    class="input test-style test-color test-size"
+    class="label input-ghost input-accent input-lg"
     placeholder="test-placeholder"
-    type="text"
+    type="password"
   />
 </div>
 `;
@@ -14,7 +14,7 @@ exports[`TextInput Component > インプットエリアをデフォルトプロ�
 <div>
   <input
     class="input input-bordered input-primary input-md"
-    placeholder="Input here"
+    placeholder="Input Here"
     type="text"
   />
 </div>

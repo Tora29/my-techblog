@@ -1,11 +1,11 @@
 <script lang="ts">
-	import BaseTextInput from '$lib/components/CommonTextInput.svelte';
+	import CommonInput from '$lib/components/CommonInput.svelte';
 	import BaseMarkdownEditor from '$lib/components/BaseMarkdownEditor.svelte';
 	import CommonButton from '$lib/components/CommonButton.svelte';
 </script>
 
 <div class="p-4">
-	<BaseTextInput placeholder="記事タイトル" />
+	<CommonInput placeholder="記事タイトル" />
 </div>
 
 <BaseMarkdownEditor />

@@ -1,15 +1,9 @@
 <script lang="ts">
-	// コンポーネントの変数
-	export let color: string = 'bg-primary';
-
-	// CommonStyle
-	const commonStyle: string = 'join-item w-40';
-
-	// CommonJoin に値を格納する
+	// CommonJoin に値を格納
 	export let joinItems = [
-		{ class: commonStyle, text: 'ABOUT ME', link: '/about' },
-		{ class: commonStyle, text: 'BLOG', link: '/blog' },
-		{ class: commonStyle, text: 'SERVICE', link: '/service' }
+		{ class: 'join-item w-40', text: 'ABOUT ME', link: '/about' },
+		{ class: 'join-item w-40', text: 'BLOG', link: '/blog' },
+		{ class: 'join-item w-40', text: 'SERVICE', link: '/service' }
 	];
 
 	// コンポーネントのインポート
@@ -19,7 +13,7 @@
 </script>
 
 <!-- Header -->
-<div class={`navbar ${color} relative flex items-center h-40`}>
+<div class={'navbar bg-primary relative flex items-center h-40'}>
 	<!-- トップ -->
 	<div class="absolute top-0 left-0 m-4 md:m-6">
 		<CommonButton text="Tora29" />

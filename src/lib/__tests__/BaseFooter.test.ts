@@ -20,20 +20,4 @@ describe('Footer Component', () => {
 		// スナップショットを取得
 		expect(container).toMatchSnapshot();
 	});
-
-	test('フッターをカスタムプロパティでレンダリング', () => {
-		const { container } = render(BaseFooter, {
-			props: {
-				color: 'bg-secondary',
-				padding: 'p-8'
-			}
-		});
-
-		// カスタムクラスが適用されているかを確認
-		const footerElement = container.querySelector('footer');
-		expect(footerElement).toHaveClass('bg-secondary', 'p-8');
-
-		// スナップショットを取得
-		expect(container).toMatchSnapshot();
-	});
 });

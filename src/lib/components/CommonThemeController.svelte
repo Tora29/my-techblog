@@ -1,6 +1,10 @@
 <script lang="ts">
-	// Svelte LifeCycle Hooks
+	// LifeCycle Hooks
 	import { onMount } from 'svelte';
+
+	// Svelte MDI
+	import WeatherSunnyIcon from '../icons/WeatherSunnyIcon.svelte';
+	import WeatherNightIcon from '../icons/WeatherNightIcon.svelte';
 
 	// コンポーネントの変数
 	export let lightTheme: string = 'myLightTheme';
@@ -22,10 +26,6 @@
 		isDarkTheme = !isDarkTheme;
 		document.documentElement.setAttribute(attributeName, isDarkTheme ? darkTheme : lightTheme);
 	}
-
-	// Svelte MDI
-	import WeatherSunnyIcon from '../icons/WeatherSunnyIcon.svelte';
-	import WeatherNightIcon from '../icons/WeatherNightIcon.svelte';
 </script>
 
 <label class={labelClass}>

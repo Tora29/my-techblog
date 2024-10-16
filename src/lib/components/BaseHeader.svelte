@@ -9,7 +9,7 @@
 	// コンポーネントのインポート
 	import CommonJoin from './CommonJoin.svelte';
 	import CommonButton from './CommonButton.svelte';
-	import BaseThemeController from '$lib/components/BaseThemeController.svelte';
+	import BaseThemeController from '$lib/components/CommonThemeController.svelte';
 </script>
 
 <!-- Header -->

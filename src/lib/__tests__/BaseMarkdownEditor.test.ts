@@ -38,7 +38,7 @@ describe('MarkdownEditor Component', () => {
 			const innerHTML = previewElement ? previewElement.innerHTML : '';
 
 			// 正常にHTMLが変換されていることを確認
-      expect(innerHTML).toContain('<h1>test-h1-text</h1>');
+			expect(innerHTML).toContain('<h1>test-h1-text</h1>');
 			expect(innerHTML).toContain('<strong>bold-text</strong>');
 		});
 
@@ -65,6 +65,9 @@ describe('MarkdownEditor Component', () => {
 			const innerHTML = previewElement ? previewElement.innerHTML : '';
 
 			expect(innerHTML).toBe(sanitizedHtml);
+
+			// スナップショットを取得
+			expect(container).toMatchSnapshot();
 		});
 	});
 
@@ -84,7 +87,7 @@ describe('MarkdownEditor Component', () => {
 			const innerHTML = previewElement ? previewElement.innerHTML : '';
 
 			// 正常にHTMLが変換されていることを確認
-      expect(innerHTML).toContain('<h1>test-h1-text</h1>');
+			expect(innerHTML).toContain('<h1>test-h1-text</h1>');
 			expect(innerHTML).toContain('<strong>bold-text</strong>');
 
 			// 特定の要素が1000回変換されていることを確認

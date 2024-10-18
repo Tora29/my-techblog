@@ -1,0 +1,23 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Button Component > ボタンをカスタムプロパティでレンダリング 1`] = `
+<div>
+  <a
+    class="btn btn-primary btn-outline btn-disabled glass btn-lg btn-wide btn-circle join-item"
+    href="test-link"
+  >
+    test-text
+  </a>
+</div>
+`;
+
+exports[`Button Component > ボタンをデフォルトプロパティでレンダリング 1`] = `
+<div>
+  <a
+    class="btn btn-accent  btn-active no-animation btn-md   "
+    href="/"
+  >
+    Button
+  </a>
+</div>
+`;

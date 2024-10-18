@@ -1,0 +1,21 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`TextInput Component > インプットエリアをカスタムプロパティでレンダリング 1`] = `
+<div>
+  <input
+    class="label input-ghost input-accent input-lg"
+    placeholder="test-placeholder"
+    type="password"
+  />
+</div>
+`;
+
+exports[`TextInput Component > インプットエリアをデフォルトプロパティでレンダリング 1`] = `
+<div>
+  <input
+    class="input input-bordered input-primary input-md"
+    placeholder="Input Here"
+    type="text"
+  />
+</div>
+`;

@@ -1,0 +1,62 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Card Component > カードをカスタムプロパティでレンダリング 1`] = `
+<div>
+  <a
+    class="card  bg-secondary"
+    href="/test-link"
+  >
+    <figure>
+      <img
+        alt="Test Image"
+        class="h-40 w-100"
+        src="https://test.com/image.jpg"
+      />
+    </figure>
+     
+    <div
+      class="card-body"
+    >
+      <h2
+        class="card-title"
+      >
+        Test Title
+      </h2>
+       
+      <p>
+        Test text content.
+      </p>
+    </div>
+  </a>
+</div>
+`;
+
+exports[`Card Component > カードをデフォルトプロパティでレンダリング 1`] = `
+<div>
+  <a
+    class="card card-side bg-primary"
+    href="/"
+  >
+    <figure>
+      <img
+        alt=""
+        class=""
+      />
+    </figure>
+     
+    <div
+      class="card-body"
+    >
+      <h2
+        class="card-title"
+      >
+        card-title
+      </h2>
+       
+      <p>
+        card-text
+      </p>
+    </div>
+  </a>
+</div>
+`;

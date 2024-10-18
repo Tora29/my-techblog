@@ -1,0 +1,17 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Footer Component > フッターをデフォルトプロパティでレンダリング 1`] = `
+<div>
+  <footer
+    class="footer footer-center bg-primary p-4"
+  >
+    <aside>
+      <p>
+        Copyright © 
+        2024
+         - All right reserved by Tora29 Industries Ltd
+      </p>
+    </aside>
+  </footer>
+</div>
+`;

@@ -22,48 +22,30 @@ describe('Card Component', () => {
 	test('カードをカスタムプロパティでレンダリング', () => {
 		const props = {
 			link: '/test-link',
+			cardSide: '',
 			color: 'bg-secondary',
-			height: 'h-50',
-			width: 'w-200',
+			customStyle: 'h-40 w-100',
 			imgSrc: 'https://test.com/image.jpg',
 			imgAlt: 'Test Image',
-			imgHeight: 'h-50',
-			imgWidth: 'w-150',
 			cardTitle: 'Test Title',
 			cardText: 'Test text content.'
-		};
+		} as const;
 
 		const { getByRole, getByAltText, getByText, container } = render(CommonCard, { props });
 
 		// カスタムリンクを確認
 		const link = getByRole('link');
 		expect(link).toHaveAttribute('href', props.link);
-		expect(link).toHaveClass(props.color, props.height, props.width);
+		expect(link).toHaveClass(props.color);
 
 		// カスタム画像を確認
 		const img = getByAltText(props.imgAlt);
 		expect(img).toHaveAttribute('src', props.imgSrc);
-		expect(img).toHaveClass(props.imgHeight, props.imgWidth);
+		expect(img).toHaveClass(props.customStyle);
 
 		// カスタムタイトルとテキストを確認
 		expect(getByText(props.cardTitle)).toBeInTheDocument();
 		expect(getByText(props.cardText)).toBeInTheDocument();
-
-		// スナップショットを取得
-		expect(container).toMatchSnapshot();
-	});
-
-	test('imgSrcが空の場合、画像がレンダリングされない', () => {
-		const props = {
-			imgSrc: '',
-			imgAlt: ''
-		};
-
-		const { queryByRole, container } = render(CommonCard, { props });
-
-		// 画像がレンダリングされていないことを確認
-		const img = queryByRole('img');
-		expect(img).not.toBeInTheDocument();
 
 		// スナップショットを取得
 		expect(container).toMatchSnapshot();

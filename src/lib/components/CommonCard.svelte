@@ -1,20 +1,18 @@
 <script lang="ts">
 	// コンポーネントの変数
 	export let link: string = '/';
-	export let color: string = 'bg-primary';
-	export let height: string = 'h-40';
-	export let width: string = 'w-100';
+	export let cardSide: 'card-side' | '' = 'card-side';
+	export let color: 'bg-primary' | 'bg-secondary' = 'bg-primary';
+	export let customStyle: string = ''
 	export let imgSrc: string = '';
 	export let imgAlt: string = '';
-	export let imgHeight: string = 'h-40';
-	export let imgWidth: string = 'w-72';
 	export let cardTitle: string = 'card-title';
 	export let cardText: string = 'card-text';
 </script>
 
-<a href={link} class={`card card-side ${color} ${height} ${width}`}>
+<a href={link} class="card {cardSide} {color}">
 	<figure>
-		<img src={imgSrc} alt={imgAlt} class="{imgHeight} {imgWidth}" />
+		<img src={imgSrc} alt={imgAlt} class="{customStyle}" />
 	</figure>
 	<div class="card-body">
 		<h2 class="card-title">{cardTitle}</h2>

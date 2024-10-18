@@ -5,8 +5,7 @@ export const constCardItems = [
 		imgAlt: 'MyImage',
 		cardTitle: 'ABOUT ME',
 		cardText: '私です。',
-		height: 'h-80',
-		imgHeight: 'h-80'
+		customStyle: 'h-72 w-72'
 	},
 	{
 		link: '/about',
@@ -14,8 +13,7 @@ export const constCardItems = [
 		imgAlt: 'techImage',
 		cardTitle: 'TECH BLOG',
 		cardText: '私です。',
-		height: 'h-80',
-		imgHeight: 'h-80'
+		customStyle: 'h-72 w-72'
 	},
 	{
 		link: '/service',
@@ -23,7 +21,6 @@ export const constCardItems = [
 		imgAlt: 'workImage',
 		cardTitle: 'SERVICE',
 		cardText: '私です。',
-		height: 'h-80',
-		imgHeight: 'h-80'
+		customStyle: 'h-72 w-72'
 	}
 ];

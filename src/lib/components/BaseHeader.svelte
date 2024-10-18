@@ -1,15 +1,6 @@
 <script lang="ts">
-	// CommonJoin に値を格納
-	export let joinItems = [
-		{ class: 'join-item w-40', text: 'ABOUT ME', link: '/about' },
-		{ class: 'join-item w-40', text: 'BLOG', link: '/blog' },
-		{ class: 'join-item w-40', text: 'SERVICE', link: '/service' }
-	];
-
-	// コンポーネントのインポート
-	import CommonJoin from './CommonJoin.svelte';
 	import CommonButton from './CommonButton.svelte';
-	import BaseThemeController from '$lib/components/CommonThemeController.svelte';
+	import CommonThemeController from '$lib/components/CommonThemeController.svelte';
 </script>
 
 <!-- Header -->
@@ -19,10 +10,14 @@
 		<CommonButton text="Tora29" />
 	</div>
 	<div class="flex-1 flex justify-center">
-		<CommonJoin {joinItems} />
+		<div class="join">
+			<CommonButton join="join-item" link="/about" text="ABOUT ME" />
+			<CommonButton join="join-item" link="/blog" text="BLOG"/>
+			<CommonButton join="join-item" link="/service" text="SERVICE"/>
+		</div>
 	</div>
 	<div>
-		<BaseThemeController />
+		<CommonThemeController />
 	</div>
 </div>
 

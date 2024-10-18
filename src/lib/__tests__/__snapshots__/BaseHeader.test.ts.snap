@@ -9,7 +9,7 @@ exports[`Header Component > デフォルトクラスが適用されているか�
       class="absolute top-0 left-0 m-4 md:m-6"
     >
       <a
-        class="btn  "
+        class="btn btn-accent  btn-active no-animation btn-md   "
         href="/"
       >
         Tora29
@@ -23,19 +23,21 @@ exports[`Header Component > デフォルトクラスが適用されているか�
         class="join"
       >
         <a
-          class="btn join-item w-40 "
+          class="btn btn-accent  btn-active no-animation btn-md   join-item"
           href="/about"
         >
           ABOUT ME
         </a>
+         
         <a
-          class="btn join-item w-40 "
+          class="btn btn-accent  btn-active no-animation btn-md   join-item"
           href="/blog"
         >
           BLOG
         </a>
+         
         <a
-          class="btn join-item w-40 "
+          class="btn btn-accent  btn-active no-animation btn-md   join-item"
           href="/service"
         >
           SERVICE
@@ -90,7 +92,7 @@ exports[`Header Component > ヘッダーをデフォルトプロパティでレ�
       class="absolute top-0 left-0 m-4 md:m-6"
     >
       <a
-        class="btn  "
+        class="btn btn-accent  btn-active no-animation btn-md   "
         href="/"
       >
         Tora29
@@ -104,19 +106,21 @@ exports[`Header Component > ヘッダーをデフォルトプロパティでレ�
         class="join"
       >
         <a
-          class="btn join-item w-40 "
+          class="btn btn-accent  btn-active no-animation btn-md   join-item"
           href="/about"
         >
           ABOUT ME
         </a>
+         
         <a
-          class="btn join-item w-40 "
+          class="btn btn-accent  btn-active no-animation btn-md   join-item"
           href="/blog"
         >
           BLOG
         </a>
+         
         <a
-          class="btn join-item w-40 "
+          class="btn btn-accent  btn-active no-animation btn-md   join-item"
           href="/service"
         >
           SERVICE

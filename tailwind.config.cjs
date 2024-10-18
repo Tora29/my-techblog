@@ -1,5 +1,3 @@
-/** @type {import('tailwindcss').Config} */
-
 // Daisy UI のインポート
 import daisyui from 'daisyui'
 

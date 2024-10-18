@@ -12,12 +12,9 @@ export default defineConfig({
 		environment: 'jsdom',
 		include: ['src/**/*.test.ts'],
 		coverage: {
-      provider: 'v8',
-      reporter: ['text', 'json', 'html', 'json-summary'],
-      reportsDirectory: './coverage',
-    },
-	},
-	optimizeDeps: {
-		exclude: ['dompurify']
+			provider: 'v8',
+			reporter: ['text', 'json', 'html', 'json-summary'],
+			reportsDirectory: './coverage'
+		}
 	}
 });

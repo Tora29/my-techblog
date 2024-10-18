@@ -1,7 +1,0 @@
-/* GitHub Markdown CSS */
-@import 'github-markdown-css/github-markdown.css';
-
-/* Tailwind CSS */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;

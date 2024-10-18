@@ -11,8 +11,8 @@ describe('Button Component', () => {
 		const link = getByRole('link');
 		expect(link).toHaveAttribute('href', '/');
 
-		// デフォルトのテキストを確認
-		expect(getByText('Button')).toBeInTheDocument();
+		// デフォルトのクラスを確認
+		expect(link).toHaveClass('btn', 'btn-accent', 'btn-active', 'no-animation', 'btn-md');
 
 		// スナップショットを取得
 		expect(container).toMatchSnapshot();
@@ -22,8 +22,15 @@ describe('Button Component', () => {
 		const props = {
 			link: 'test-link',
 			text: 'test-text',
-			classType: 'test-classType'
-		};
+			color: 'btn-primary',
+			style: 'btn-outline',
+			state: 'btn-disabled',
+			effect: 'glass',
+			size: 'btn-lg',
+			width: 'btn-wide',
+			radius: 'btn-circle',
+			join: 'join-item'
+		} as const;
 
 		const { getByRole, getByText, container } = render(CommonButton, { props });
 
@@ -35,7 +42,17 @@ describe('Button Component', () => {
 		expect(getByText(props.text)).toBeInTheDocument();
 
 		// カスタムスタイルを確認
-		expect(link).toHaveClass('btn', props.classType);
+		expect(link).toHaveClass(
+			'btn',
+			props.color,
+			props.style,
+			props.state,
+			props.effect,
+			props.size,
+			props.width,
+			props.radius,
+			props.join
+		);
 
 		// スナップショットを取得
 		expect(container).toMatchSnapshot();
